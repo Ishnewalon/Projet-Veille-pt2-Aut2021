@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 #endif
 
     QGuiApplication app(argc, argv);
-    Login accountConnect;
+    qmlRegisterType<Login> ("Tester", 1, 0, "Login");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -21,9 +21,6 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
     engine.load(url);
-
-    QQmlContext * rootContext = engine.rootContext();
-    rootContext->setContextProperty("classA", &accountConnect);
 
     return app.exec();
 }
