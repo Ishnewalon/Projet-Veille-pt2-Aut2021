@@ -22,7 +22,8 @@ int main(int argc, char *argv[])
     }, Qt::QueuedConnection);
     engine.load(url);
 
-
+    QQmlContext * rootContext = engine.rootContext();
+    rootContext->setContextProperty("classA", &accountConnect);
 
     return app.exec();
 }
