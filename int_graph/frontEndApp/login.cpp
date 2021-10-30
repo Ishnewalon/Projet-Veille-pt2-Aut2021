@@ -1,8 +1,13 @@
 #include "login.h"
-#include <iostream>
+#include <QDebug>
 
 Login::Login(QObject *parent) : QObject(parent)
 {
 
+}
+
+void Login::callMe()
+{
+    qDebug() << "I'm doing it";
 }
 
