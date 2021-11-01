@@ -12,6 +12,13 @@ Window {
         id: myLogin
     }
 
+    Label {
+        text: "Username"
+        anchors.bottom: myButton.top
+        anchors.rightMargin: 30
+
+    }
+
     Button {
         id: myButton
         anchors.centerIn: parent
