@@ -13,12 +13,29 @@ Window {
     }
 
     Label {
+        id: usernameLabel
         text: "Utilisateur"
-        anchors.bottom: userInput.top
+        anchors.bottom: passwordLabel.top
     }
+
     TextField {
         id: userInput
         placeholderText: qsTr("Entrez votre nom d'utilisateur")
+      //  horizontalAlignment: horizontalCenter
+        //anchors.leftMargin: 15
+    }
+
+    Label {
+        id: passwordLabel
+        text: "Mot de Passe"
+        anchors.bottom: myButton.top
+    }
+
+    TextField {
+        id: passwordInput
+        placeholderText: qsTr("Entrez votre mot de passe")
+       // horizontalAlignment: horizontalCenter
+        //anchors.leftMargin: 15
     }
 
 
