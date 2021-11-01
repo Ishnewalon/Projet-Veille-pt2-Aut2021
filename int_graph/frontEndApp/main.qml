@@ -13,11 +13,15 @@ Window {
     }
 
     Label {
-        text: "Username"
-        anchors.bottom: myButton.top
-        anchors.rightMargin: 30
-
+        text: "Utilisateur"
+        anchors.bottom: userInput.top
     }
+    TextField {
+        id: userInput
+        placeholderText: qsTr("Entrez votre nom d'utilisateur")
+    }
+
+
 
     Button {
         id: myButton
