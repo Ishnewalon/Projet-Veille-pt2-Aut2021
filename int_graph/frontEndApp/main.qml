@@ -11,7 +11,7 @@ Window {
     Login {
         id: myLogin
     }
-
+Rectangle {
     Label {
         id: usernameLabel
         text: "Utilisateur"
@@ -21,25 +21,24 @@ Window {
     TextField {
         id: userInput
         placeholderText: qsTr("Entrez votre nom d'utilisateur")
-      //  horizontalAlignment: horizontalCenter
-        //anchors.leftMargin: 15
+        anchors.left: usernameLabel.right
     }
+}
+Rectangle {
 
     Label {
         id: passwordLabel
         text: "Mot de Passe"
-        anchors.bottom: myButton.top
+        anchors.bottom: passwordInput.top
     }
 
     TextField {
         id: passwordInput
         placeholderText: qsTr("Entrez votre mot de passe")
         echoMode: TextInput.Password
-       // horizontalAlignment: horizontalCenter
-        //anchors.leftMargin: 15
     }
-
-
+    anchors.centerIn: parent
+}
 
     Button {
         id: myButton
