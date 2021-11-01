@@ -7,7 +7,7 @@ Window {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Resto App")
 
     Login {
         id: myLogin
@@ -17,7 +17,18 @@ Window {
 
         anchors.fill: parent
         anchors.margins: 10
-        spacing: 1
+        spacing: 10
+
+        Rectangle {
+            id: titleRect
+            Text {
+                text: "Bienvenue Chez Barbies Resto Bar Grill"
+                font.bold: true
+                font.pixelSize: 20
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+            Layout.fillWidth: true
+        }
 
         Rectangle {
             id: userRect
@@ -32,7 +43,7 @@ Window {
                 id: userInput
                 placeholderText: qsTr("Entrez votre nom d'utilisateur")
                 anchors.horizontalCenter: parent.horizontalCenter
-
+                width: 300
             }
             Layout.fillWidth: true
         }
@@ -51,48 +62,42 @@ Window {
                 placeholderText: qsTr("Entrez votre mot de passe")
                 echoMode: TextInput.Password
                 anchors.horizontalCenter: parent.horizontalCenter
+                width: 300
             }
             Layout.fillWidth: true
         }
 
-    }
+        Rectangle {
+            Rectangle {
+                Button {
+                    id: loginButton
+                    text: "Connexion"
+                    onClicked: myLogin.callMe()
+                    background: Rectangle {
+                        color: "green"
+                        radius: 20
+                    }
+                }
 
-/*
-    Rectangle {
-        id: userRect
-        Label {
-            id: usernameLabel
-            text: "Utilisateur"
-            anchors.bottom: userInput.top
+                Button {
+                    id: quitButton
+                    text: "Quitter"
+                    onClicked: myLogin.callMe()
+                    anchors.right: loginButton.left
+                    anchors.margins: 15
+                    background: Rectangle {
+                        color: "red"
+                        radius: 20
+                    }
+                }
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+            Layout.fillWidth: true
         }
 
-        TextField {
-            id: userInput
-            placeholderText: qsTr("Entrez votre nom d'utilisateur")
-        }
-    }
-    Rectangle {
-        id: passRect
-        Label {
-            id: passwordLabel
-            text: "Mot de Passe"
-            anchors.bottom: passwordInput.top
-        }
 
-        TextField {
-            id: passwordInput
-            placeholderText: qsTr("Entrez votre mot de passe")
-            echoMode: TextInput.Password
-            anchors.centerIn: parent
-        }
+
     }
 
-    Button {
-        id: myButton
-        //anchors.centerIn: parent
-        text: "Click me"
-        onClicked: myLogin.callMe()
-    }
-    //anchors.centerIn: parent
-    }*/
+
 }
