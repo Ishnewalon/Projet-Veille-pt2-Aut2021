@@ -34,6 +34,7 @@ Window {
     TextField {
         id: passwordInput
         placeholderText: qsTr("Entrez votre mot de passe")
+        echoMode: TextInput.Password
        // horizontalAlignment: horizontalCenter
         //anchors.leftMargin: 15
     }
