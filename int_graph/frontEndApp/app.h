@@ -4,15 +4,15 @@
 #include <QObject>
 #include <pqxx/pqxx>
 #include <string>
-#include "SQLRequests.hpp"
-#include "user.hpp"
+#include "sqlrequests.h"
+#include "user.h"
 
 class app : public QObject
 {
     Q_OBJECT
 public:
     explicit app(QObject *parent = nullptr);
-    App(): C{SQLRequests::connectionString()} {}
+    App(): C{sqlRequests::connectionString()} {}
     void run();
     void displayConnectionMenu();
     void connexionEmp();
@@ -23,12 +23,13 @@ public:
     void changePrice();
 
 
-private:    pqxx::connection C;
+private:
+    pqxx::connection C;
     std::string numEmp;
     std::string mdp;
     char choixExterne;
     char choixInterne;
-    SQLRequests *sql{nullptr};
+    sqlRequests *sql{nullptr};
 
 signals:
 
