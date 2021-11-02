@@ -15,10 +15,10 @@ Item {
         Rectangle {
             id: titleRect
             Text {
-                text: "Bienvenue Chez Barbies Resto Bar Grill"
+                text: "Bienvenue utilisateur"
                 font.bold: true
                 font.pixelSize: 20
-                anchors.horizontalCenter: parent.horizontalCenter
+                //anchors.horizontalCenter: parent.horizontalCenter
             }
             Layout.fillWidth: true
         }
@@ -61,10 +61,28 @@ Item {
         }
 
         Rectangle {
+            id: changePassRect
+            Label {
+                id: changePassLabel
+                text: "Changer votre mot de passe"
+                anchors.bottom: changePassButton.top
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.margins: 10
+            }
+
+            Button {
+                id: changePassButton
+                text: "Clickme"
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+            Layout.fillWidth: true
+        }
+
+        Rectangle {
 
             Button {
                 id: quitButton
-                text: "Quitter"
+                text: "Deconnexion"
                 onClicked: Qt.quit()
                 anchors.margins: 15
                 anchors.horizontalCenter: parent.horizontalCenter
