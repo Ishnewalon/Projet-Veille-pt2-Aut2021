@@ -18,6 +18,7 @@ set(PROJECT_SOURCES
         main.cpp
         login.h
         login.cpp
+        app.h app.cpp
         qml.qrc
 )
 
