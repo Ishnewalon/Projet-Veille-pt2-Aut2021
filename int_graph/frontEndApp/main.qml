@@ -13,6 +13,10 @@ Window {
         id: myLogin
     }
 
+    Loader {
+        id: pageLoader
+    }
+
     ColumnLayout {
 
         anchors.fill: parent
@@ -72,7 +76,7 @@ Window {
                 Button {
                     id: loginButton
                     text: "Connexion"
-                    onClicked: myLogin.callMe()
+                    onClicked: pageLoader.source = "internalMenu.qml"
                     background: Rectangle {
                         color: "green"
                         radius: 20
