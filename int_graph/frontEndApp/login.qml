@@ -36,6 +36,7 @@ Item {
                 text: "Utilisateur"
                 anchors.bottom: userInput.top
                 anchors.horizontalCenter: parent.horizontalCenter
+                anchors.margins: 10
             }
 
             TextField {
@@ -54,6 +55,7 @@ Item {
                 text: "Mot de Passe"
                 anchors.bottom: passwordInput.top
                 anchors.horizontalCenter: parent.horizontalCenter
+                anchors.margins: 10
             }
 
             TextField {
