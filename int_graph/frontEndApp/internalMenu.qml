@@ -101,7 +101,7 @@ Item {
             Button {
                 id: quitButton
                 text: "Deconnexion"
-                onClicked: Qt.quit()
+                onClicked: pageLoader.source = "login.qml"
                 anchors.margins: 15
                 anchors.horizontalCenter: parent.horizontalCenter
                 background: Rectangle {
