@@ -5,7 +5,7 @@ import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import Tester 1.0
 Item {
-    width: 400
+    width: 600
     height: 200
 
     Login {
