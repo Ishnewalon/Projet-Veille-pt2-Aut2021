@@ -83,7 +83,7 @@ Item {
                 Button {
                     id: quitButton
                     text: "Quitter"
-                    onClicked: myLogin.callMe()
+                    onClicked: Qt.quit()
                     anchors.right: loginButton.left
                     anchors.margins: 15
                     background: Rectangle {
