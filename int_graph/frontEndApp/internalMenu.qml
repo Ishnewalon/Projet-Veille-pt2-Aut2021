@@ -79,6 +79,24 @@ Item {
         }
 
         Rectangle {
+            id: changePriceRect
+            Label {
+                id: changePriceLabel
+                text: "Changer le prix d'un plat"
+                anchors.bottom: changePriceButton.top
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.margins: 10
+            }
+
+            Button {
+                id: changePriceButton
+                text: "Clickme"
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+            Layout.fillWidth: true
+        }
+
+        Rectangle {
 
             Button {
                 id: quitButton
