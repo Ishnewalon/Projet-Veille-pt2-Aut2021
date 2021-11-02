@@ -6,7 +6,7 @@ import QtQuick.Layouts 1.12
 import Tester 1.0
 Item {
     width: 650
-    height: 200
+    height: 400
 
     Login {
         id: myLogin
