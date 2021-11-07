@@ -26,7 +26,7 @@ void sqlRequests::listRecords(std::string tableName){
                 std::cout << "Fin des donnes" << std::endl;
 }
 
-bool SQLRequests::findUser(User &user){
+bool sqlRequests::findUser(User &user){
                 std::string sqlStatement = "SELECT * FROM utilisateurs WHERE numemp = '" + user.getNumEmp() + "' AND mdp = '" + user.getMDP() + "' ;";
                 pqxx::nontransaction N(C);
                 pqxx::result R(N.exec(sqlStatement));
@@ -37,5 +37,24 @@ bool SQLRequests::findUser(User &user){
                         return true;
                 }
                 return false;
+}
+
+
+void sqlRequests::updatePassword(std::string empID, std::string oldPassword, std::string newPassword) {
+        std::string sqlStatement = "UPDATE utilisateurs SET mdp = '" + newPassword + "'" \
+                                     " WHERE mdp = '" + oldPassword + "' AND numemp = '" + empID + "';";
+        pqxx::work W(C);
+        W.exec(sqlStatement);
+        W.commit();
+        std::cout << "Changement du mot de passe a ete un succes" << std::endl;
+}
+
+void sqlRequests::updatePrice(std::string tableName, std::string menuItemName, double newPrice) {
+        std::string sqlStatement = "UPDATE " + tableName + " SET prix = " + std::to_string(newPrice) + \
+                                    " WHERE nom = '" + menuItemName + "';";
+        pqxx::work W(C);
+        W.exec(sqlStatement);
+        W.commit();
+        std::cout << "Changement du prix effectue" << std::endl;
 }
 
