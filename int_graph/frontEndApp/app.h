@@ -12,7 +12,7 @@ class app : public QObject
     Q_OBJECT
 public:
     explicit app(QObject *parent = nullptr);
-    App(): C{sqlRequests::connectionString()} {}
+    app(): C{sqlRequests::connectionString()} {}
     void run();
     void displayConnectionMenu();
     void connexionEmp();
