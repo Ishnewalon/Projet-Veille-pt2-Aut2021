@@ -26,7 +26,7 @@ void sqlRequests::listRecords(std::string tableName){
                 std::cout << "Fin des donnes" << std::endl;
 }
 
-bool sqlRequests::findUser(User &user){
+bool sqlRequests::findUser(user &user){
                 std::string sqlStatement = "SELECT * FROM utilisateurs WHERE numemp = '" + user.getNumEmp() + "' AND mdp = '" + user.getMDP() + "' ;";
                 pqxx::nontransaction N(C);
                 pqxx::result R(N.exec(sqlStatement));

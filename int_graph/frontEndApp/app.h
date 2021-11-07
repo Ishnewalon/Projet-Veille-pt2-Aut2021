@@ -17,7 +17,7 @@ public:
     void displayConnectionMenu();
     void connexionEmp();
     void empNotFound();
-    void billingMenu(User user);
+    void billingMenu(user user);
     void displayBillingOptions();
     void changePassword();
     void changePrice();

@@ -14,7 +14,7 @@ public:
     SQLRequests(pqxx::connection &C): C{C} {}
     static std::string connectionString();
     void listRecords(std::string tableName);
-    bool findUser(User &user);
+    bool findUser(user &user);
     void updatePassword(std::string empID, std::string oldPassword, std::string newPassword);
     void updatePrice(std::string tableName, std::string menuItemName, double newPrice);
 

@@ -41,7 +41,7 @@ void app::connexionEmp() {
         std::cin >> numEmp;
         std::cout << "Votre mot de passe" << std::endl;
         std::cin >> mdp;
-        User user{numEmp, mdp};
+        user user{numEmp, mdp};
         if (sql->findUser(user)){
                 billingMenu(user);
         }
@@ -58,7 +58,7 @@ void app::empNotFound() {
         std::cout << std::endl;
 }
 
-void app::billingMenu(User user) {
+void app::billingMenu(user user) {
         std::cout << "Bonjour " << user.getNom() << ", " << user.getPrenom() << std::endl;
         do {
                 displayBillingOptions();
