@@ -8,8 +8,6 @@ user::user(QObject *parent) : QObject(parent)
 
 }
 
-
-
 std::string user::getNom(){
         return nom;
 }

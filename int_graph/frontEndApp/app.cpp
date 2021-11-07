@@ -4,7 +4,7 @@
 #include <pqxx/pqxx>
 #include "user.h"
 
-
+app* app::pApp = nullptr;
 
 void app::run() {
 
