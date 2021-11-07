@@ -5,17 +5,13 @@
 #include "user.h"
 
 
-app::app(QObject *parent) : QObject(parent)
-{
-
-}
 
 void app::run() {
 
         if (C.is_open()) {
                 std::cout << "La connexion a reussie" << std::endl;
                 sql = new sqlRequests(C);
-                displayConnectionMenu();
+             //   displayConnectionMenu();
         }
 }
 
@@ -58,7 +54,7 @@ void app::empNotFound() {
         std::cout << std::endl;
 }
 
-void app::billingMenu(user user) {
+void app::billingMenu(user &user) {
         std::cout << "Bonjour " << user.getNom() << ", " << user.getPrenom() << std::endl;
         do {
                 displayBillingOptions();

@@ -11,7 +11,8 @@ class app : public QObject
 {
     Q_OBJECT
 public:
-    explicit app(QObject *parent = nullptr);
+    static app* pApp;
+
     app(): C{sqlRequests::connectionString()} {}
     void run();
     void displayConnectionMenu();

@@ -50,7 +50,7 @@ endif()
 target_compile_definitions(frontEndApp
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(frontEndApp
-  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick)
+  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick )
 
 set_target_properties(frontEndApp PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
@@ -62,3 +62,4 @@ if(QT_VERSION_MAJOR EQUAL 6)
     qt_import_qml_plugins(frontEndApp)
     qt_finalize_executable(frontEndApp)
 endif()
+

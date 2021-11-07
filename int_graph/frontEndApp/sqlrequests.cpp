@@ -3,15 +3,16 @@
 #include <pqxx/pqxx>
 #include "sqlrequests.h"
 
-sqlRequests::sqlRequests(QObject *parent) : QObject(parent)
-{
-
-}
 const std::string sqlRequests::dbName {"facturation_resto"};
 const std::string sqlRequests::userName {"ishnewalon"};
 const std::string sqlRequests::password {"inf556"};
 const std::string sqlRequests::hostaddr {"127.0.0.1"};
 const std::string sqlRequests::port {"5432"};
+
+std::string sqlRequests::connectionString(){
+                return "dbname = " + dbName + " user = " + userName + " password = " + password + " hostaddr = " + hostaddr + " port = " + port;
+        }
+
 
 void sqlRequests::listRecords(std::string tableName){
                 std::string sqlStatement = "SELECT * FROM " + tableName + ";";

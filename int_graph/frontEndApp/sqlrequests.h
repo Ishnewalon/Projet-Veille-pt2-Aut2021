@@ -10,8 +10,7 @@ class sqlRequests : public QObject
 {
     Q_OBJECT
 public:
-    explicit sqlRequests(QObject *parent = nullptr);
-    sqlRequests(pqxx::connection &C): C{C} {}
+    sqlRequests(pqxx::connection &C, QObject *parent = nullptr): QObject{parent}, C{C} {}
     static std::string connectionString();
     void listRecords(std::string tableName);
     bool findUser(user &user);

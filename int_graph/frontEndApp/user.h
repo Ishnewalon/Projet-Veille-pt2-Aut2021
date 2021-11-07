@@ -10,7 +10,7 @@ class user : public QObject
 
 public:
     explicit user(QObject *parent = nullptr);
-    user(std::string empID, std::string mdpEmp):numEmp{empID},mdp{mdpEmp}{}
+    user(std::string empID, std::string mdpEmp):QObject(nullptr), numEmp{empID},mdp{mdpEmp}{}
     std::string getNom();
     std::string getPrenom();
     std::string getNumEmp();
