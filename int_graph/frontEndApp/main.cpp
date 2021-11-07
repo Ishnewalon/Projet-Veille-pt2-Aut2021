@@ -3,13 +3,15 @@
 #include <QQmlContext>
 
 #include "login.h"
+#include "app.h"
 
 int main(int argc, char *argv[])
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
-
+    app::pApp = new app {};
+    app::pApp->run();
 
     QGuiApplication app(argc, argv);
     qmlRegisterType<Login> ("Tester", 1, 0, "Login");
