@@ -73,7 +73,11 @@ Item {
                 Button {
                     id: loginButton
                     text: "Connexion"
-                    onClicked: pageLoader.source = "internalMenu.qml"
+                    onClicked: {
+                        if (true) {
+                            pageLoader.source = "internalMenu.qml"
+                        }
+                    }
                     background: Rectangle {
                         color: "green"
                         radius: 20
