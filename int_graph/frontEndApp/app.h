@@ -15,8 +15,7 @@ public:
 
     app(): QObject{nullptr}, C{sqlRequests::connectionString()} {}
     void run();
-    void displayConnectionMenu();
-    void connexionEmp();
+    void connexionEmp(std::string numEmp, std::string mdp);
     void empNotFound();
     void billingMenu(user &user);
     void displayBillingOptions();

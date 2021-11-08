@@ -11,32 +11,10 @@ void app::run() {
         if (C.is_open()) {
                 std::cout << "La connexion a reussie" << std::endl;
                 sql = new sqlRequests(C);
-             //   displayConnectionMenu();
         }
 }
 
-void app::displayConnectionMenu() {
-        do {
-                std::cout << "Bienvenue Chez Barbies Resto Bar Grill" << std::endl;
-                std::cout << "a) Connexion" << "\n"
-                        << "q) Quitter" << "\n" << std::endl;
-
-                std::cout << "Que voulez-vous faire?" << std::endl;
-                std::cin >> choixExterne;
-
-                if (choixExterne == 'a') {
-                        std::cout << std::endl;
-                        connexionEmp();
-                }
-        }
-        while (choixExterne != 'q');
-}
-
-void app::connexionEmp() {
-        std::cout << "Votre numero d'employe" << std::endl;
-        std::cin >> numEmp;
-        std::cout << "Votre mot de passe" << std::endl;
-        std::cin >> mdp;
+void app::connexionEmp(std::string numEmp, std::string mdp) {
         user user{numEmp, mdp};
         if (sql->findUser(user)){
                 billingMenu(user);
