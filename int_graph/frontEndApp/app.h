@@ -14,8 +14,8 @@ public:
     static app* pApp;
 
     app(): QObject{nullptr}, C{sqlRequests::connectionString()} {}
-    void run();
-    void connexionEmp(std::string numEmp, std::string mdp);
+    void run();;
+    void connectionEmp(std::string numEmp, std::string mdp);
     void empNotFound();
     void billingMenu(user &user);
     void displayBillingOptions();

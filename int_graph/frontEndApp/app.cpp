@@ -14,7 +14,7 @@ void app::run() {
         }
 }
 
-void app::connexionEmp(std::string numEmp, std::string mdp) {
+void app::connectionEmp(std::string numEmp, std::string mdp) {
         user user{numEmp, mdp};
         if (sql->findUser(user)){
                 billingMenu(user);
