@@ -10,6 +10,8 @@ Item {
 
     Login {
         id: myLogin
+        empId: userInput.text
+        mdp: passwordInput.text
     }
 
     ColumnLayout {
@@ -75,6 +77,7 @@ Item {
                     text: "Connexion"
                     onClicked: {
                         if (true) {
+                            myLogin.printTest()
                             pageLoader.source = "internalMenu.qml"
                         }
                     }

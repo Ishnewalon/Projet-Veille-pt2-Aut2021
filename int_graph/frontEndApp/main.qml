@@ -9,8 +9,6 @@ Window {
     visible: true
     title: qsTr("Resto App")
 
-
-
     Loader {
         id: pageLoader
         source: "login.qml"
