@@ -17,7 +17,7 @@ public:
                         std::string hostaddr = "127.0.0.1",
                         std::string port = "5432");
     std::string connectionString();
-
+    Q_INVOKABLE bool connectEmp(QString empId, QString mdp);
 
 private:
     std::string dbName;
@@ -26,7 +26,7 @@ private:
     std::string hostaddr;
     std::string port;
 signals:
-        bool connectEmp(QString empId, QString mdp);
+
 };
 
 #endif // DBREQUESTS_H

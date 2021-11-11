@@ -81,8 +81,7 @@ Item {
                     id: loginButton
                     text: "Connexion"
                     onClicked: {
-                        if (true) {
-                            myRequests.connectEmp(userInput.text, passwordInput.text)
+                        if (myRequests.connectEmp(userInput.text, passwordInput.text)) {
                             pageLoader.source = "internalMenu.qml"
                         }
                     }

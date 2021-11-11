@@ -10,7 +10,6 @@ dbRequests::dbRequests(QObject *parent, std::string dbName,
                                                     password("inf556"),
                                                     hostaddr("127.0.0.1"),
                                                     port("5432")
-
 {
 
 }
@@ -28,7 +27,8 @@ bool dbRequests::connectEmp(QString empId, QString mdp) {
         pqxx::result R(N.exec(sqlStatement));
 
         for (pqxx::result::const_iterator iterator = R.begin(); iterator != R.end(); ++iterator){
-                return true;
+            std::cout << "found you" << std::endl;
+            return true;
         }
         return false;
     }
