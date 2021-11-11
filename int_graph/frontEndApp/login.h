@@ -20,30 +20,30 @@ public:
        }
 
        void setEmpId(QString empId) {
-           m_empId = empId.toStdString();
-           emit empIdChanged(empId.toStdString());
+           m_empId = empId;
+           emit empIdChanged(empId);
        }
 
-       std::string empId() const {
+       QString empId() const {
            return m_empId;
        }
 
        void setMdp(QString mdp) {
-           m_mdp = mdp.toStdString();
-           emit mdpChanged(mdp.toStdString());
+           m_mdp = mdp;
+           emit mdpChanged(mdp);
        }
 
-       std::string mdp() const {
+       QString mdp() const {
            return m_mdp;
        }
    private:
-       std::string m_empId;
-       std::string m_mdp;
+       QString m_empId;
+       QString m_mdp;
 
 
 signals:
-       void empIdChanged(std::string);
-       void mdpChanged(std::string);
+       void empIdChanged(QString);
+       void mdpChanged(QString);
 
 public slots:
     void callMe();
