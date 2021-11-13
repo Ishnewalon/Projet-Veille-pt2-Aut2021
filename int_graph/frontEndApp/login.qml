@@ -4,7 +4,7 @@ import QtQuick.Window 2.15
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import Tester 1.0
-import dbTester 1.0
+//import dbTester 1.0
 Item {
     width: 650
     height: 400
@@ -15,9 +15,9 @@ Item {
         mdp: passwordInput.text
     }
 
-    Requests {
-        id: myRequests
-    }
+  //  Requests {
+    //    id: myRequests
+    //}
 
     ColumnLayout {
 
@@ -81,7 +81,7 @@ Item {
                     id: loginButton
                     text: "Connexion"
                     onClicked: {
-                        if (myRequests.connectEmp(userInput.text, passwordInput.text)) {
+                        if (classA.connectEmp(userInput.text, passwordInput.text)) {
                             pageLoader.source = "internalMenu.qml"
                         }
                     }

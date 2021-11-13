@@ -14,7 +14,8 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     qmlRegisterType<Login> ("Tester", 1, 0, "Login");
-    qmlRegisterType<dbRequests> ("dbTester", 1, 0, "Requests");
+//    qmlRegisterType<dbRequests> ("dbTester", 1, 0, "Requests");
+    dbRequests requests;
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -24,6 +25,9 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
     engine.load(url);
+
+    QQmlContext * rootContext = engine.rootContext();
+    rootContext->setContextProperty("classA", &requests);
 
     return app.exec();
 }
