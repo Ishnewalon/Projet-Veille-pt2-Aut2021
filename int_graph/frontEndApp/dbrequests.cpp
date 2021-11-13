@@ -45,3 +45,7 @@ void dbRequests::seeEmp() {
     std::cout << employee.getPrenom() + " " + employee.getNom() << std::endl;
 }
 
+std::string dbRequests::getUserFirstName() {
+    return employee.getPrenom();
+}
+

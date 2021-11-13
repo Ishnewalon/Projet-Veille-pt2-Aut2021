@@ -20,6 +20,7 @@ public:
     std::string connectionString();
     Q_INVOKABLE bool connectEmp(QString empId, QString mdp);
     Q_INVOKABLE void seeEmp();
+    Q_INVOKABLE std::string getUserFirstName();
 
 private:
     user employee;

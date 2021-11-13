@@ -18,7 +18,7 @@ Item {
         Rectangle {
             id: titleRect
             Text {
-                text: "Bienvenue utilisateur"
+                text: "Bienvenue " + classA.getUserFirstName()
                 font.bold: true
                 font.pixelSize: 20
                 //anchors.horizontalCenter: parent.horizontalCenter
