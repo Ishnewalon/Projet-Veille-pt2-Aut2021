@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <pqxx/pqxx>
+#include "user.h"
 
 class dbRequests : public QObject
 {
@@ -18,8 +19,10 @@ public:
                         std::string port = "5432");
     std::string connectionString();
     Q_INVOKABLE bool connectEmp(QString empId, QString mdp);
+    Q_INVOKABLE void seeEmp();
 
 private:
+    user employee;
     std::string dbName;
     std::string userName;
     std::string password;

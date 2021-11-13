@@ -82,6 +82,7 @@ Item {
                     text: "Connexion"
                     onClicked: {
                         if (classA.connectEmp(userInput.text, passwordInput.text)) {
+                            classA.seeEmp();
                             pageLoader.source = "internalMenu.qml"
                         }
                     }

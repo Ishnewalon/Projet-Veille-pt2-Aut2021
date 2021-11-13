@@ -28,6 +28,8 @@ bool dbRequests::connectEmp(QString empId, QString mdp) {
 
         for (pqxx::result::const_iterator iterator = R.begin(); iterator != R.end(); ++iterator){
             std::cout << "found you" << std::endl;
+            employee.setNom(iterator["nom"].as<std::string>());
+            employee.setPrenom(iterator["prenom"].as<std::string>());
             return true;
         }
         return false;
@@ -37,5 +39,9 @@ bool dbRequests::connectEmp(QString empId, QString mdp) {
          return 1;
          }
     C.disconnect();
+}
+
+void dbRequests::seeEmp() {
+    std::cout << employee.getPrenom() + " " + employee.getNom() << std::endl;
 }
 
