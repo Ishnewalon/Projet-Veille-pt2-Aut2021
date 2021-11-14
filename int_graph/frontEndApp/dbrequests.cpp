@@ -55,7 +55,7 @@ QString dbRequests::getUserLastName() {
 
 
 
-void dbRequests::changePassword(QString empID, QString oldPassword, QString newPassword) {
+void dbRequests::updatePassword(QString empID, QString oldPassword, QString newPassword) {
     pqxx::connection C(connectionString());
     if (C.is_open()){
         std::cout << "La connexion a reussie" << std::endl;
@@ -71,3 +71,12 @@ void dbRequests::changePassword(QString empID, QString oldPassword, QString newP
     }
     C.disconnect();
 }
+
+/*void dbRequests::updatePrice(std::string tableName, std::string menuItemName, double newPrice) {
+        std::string sqlStatement = "UPDATE " + tableName + " SET prix = " + std::to_string(newPrice) + \
+                                    " WHERE nom = '" + menuItemName + "';";
+        pqxx::work W(C);
+        W.exec(sqlStatement);
+        W.commit();
+        std::cout << "Changement du prix effectue" << std::endl;
+}*/

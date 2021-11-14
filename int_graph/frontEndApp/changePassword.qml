@@ -91,7 +91,7 @@ Item {
                     id: confirmButton
                     text: "Confirmer"
                     onClicked: {
-                        backend.changePassword(empIdInput.text, oldPassInput.text, newPassInput.text)
+                        backend.updatePassword(empIdInput.text, oldPassInput.text, newPassInput.text)
                         pageLoader.source = "internalMenu.qml"
                     }
                     background: Rectangle {

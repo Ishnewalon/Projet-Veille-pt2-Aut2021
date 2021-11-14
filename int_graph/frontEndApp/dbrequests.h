@@ -22,7 +22,7 @@ public:
     Q_INVOKABLE void seeEmp();
     Q_INVOKABLE QString getUserFirstName();
     Q_INVOKABLE QString getUserLastName();
-    Q_INVOKABLE void changePassword(QString empId, QString oldPassword, QString newPassword);
+    Q_INVOKABLE void updatePassword(QString empId, QString oldPassword, QString newPassword);
 
 private:
     user employee;
