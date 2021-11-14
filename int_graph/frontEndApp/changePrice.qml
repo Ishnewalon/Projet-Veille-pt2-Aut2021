@@ -14,6 +14,18 @@ Item {
         anchors.margins: 10
         spacing: 10
 
+        Rectangle {
+            id: titleRect
+            Text {
+                text: "Changer le prix d'un repas"
+                font.bold: true
+                font.pixelSize: 20
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+            Layout.fillWidth: true
+        }
+
+
 
 
     }
