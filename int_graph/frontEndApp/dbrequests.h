@@ -21,6 +21,7 @@ public:
     Q_INVOKABLE bool connectEmp(QString empId, QString mdp);
     Q_INVOKABLE void seeEmp();
     Q_INVOKABLE QString getUserFirstName();
+    Q_INVOKABLE QString getUserLastName();
 
 private:
     user employee;

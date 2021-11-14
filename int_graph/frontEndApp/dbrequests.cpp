@@ -49,3 +49,6 @@ QString dbRequests::getUserFirstName() {
     return QString::fromStdString(employee.getPrenom());
 }
 
+QString dbRequests::getUserLastName() {
+    return QString::fromStdString(employee.getNom());
+}
