@@ -24,6 +24,24 @@ Item {
             }
             Layout.fillWidth: true
         }
+        Rectangle {
+            id: tableNameRect
+            Label {
+                id: tableNameLabel
+                text: "De quel menu provient le prix a changer? (Souper, Diner, Dejeuner, etc)"
+                anchors.bottom: tableNameInput.top
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.margins: 10
+            }
+
+            TextField {
+                id: tableNameInput
+                placeholderText: qsTr("Entrez le menu")
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: 300
+            }
+            Layout.fillWidth: true
+        }
 
 
 
