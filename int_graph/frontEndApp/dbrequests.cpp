@@ -52,3 +52,22 @@ QString dbRequests::getUserFirstName() {
 QString dbRequests::getUserLastName() {
     return QString::fromStdString(employee.getNom());
 }
+
+
+
+void dbRequests::changePassword(QString empID, QString oldPassword, QString newPassword) {
+    pqxx::connection C(connectionString());
+    if (C.is_open()){
+        std::cout << "La connexion a reussie" << std::endl;
+        std::string sqlStatement = "UPDATE utilisateurs SET mdp = '" + newPassword.toStdString() + "'" \
+                                     " WHERE mdp = '" + oldPassword.toStdString() + "' AND numemp = '" + empID.toStdString() + "';";
+        pqxx::work W(C);
+        W.exec(sqlStatement);
+        W.commit();
+        std::cout << "Changement du mot de passe a ete un succes" << std::endl;
+    }
+    else {
+         std::cout << "La connexion a echouee" << std::endl;
+    }
+    C.disconnect();
+}
