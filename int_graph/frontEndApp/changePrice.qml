@@ -43,7 +43,24 @@ Item {
             Layout.fillWidth: true
         }
 
+        Rectangle {
+            id: menuItemNameRect
+            Label {
+                id: menuItemNameLabel
+                text: "Nom du plat"
+                anchors.bottom: menuItemNameInput.top
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.margins: 10
+            }
 
+            TextField {
+                id: menuItemNameInput
+                placeholderText: qsTr("Entrez le nom du plat")
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: 300
+            }
+            Layout.fillWidth: true
+        }
 
 
     }
