@@ -83,5 +83,34 @@ Item {
             Layout.fillWidth: true
         }
 
+        Rectangle {
+            Rectangle {
+                Button {
+                    id: confirmButton
+                    text: "Confirmer"
+                    onClicked: {
+                        pageLoader.source = "internalMenu.qml"
+                    }
+                    background: Rectangle {
+                        color: "green"
+                        radius: 20
+                    }
+                }
+
+                Button {
+                    id: backButton
+                    text: "Retour"
+                    onClicked: pageLoader.source = "internalMenu.qml"
+                    anchors.right: confirmButton.left
+                    anchors.margins: 15
+                    background: Rectangle {
+                        color: "red"
+                        radius: 20
+                    }
+                }
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+            Layout.fillWidth: true
+        }
     }
 }
