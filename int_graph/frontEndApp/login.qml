@@ -70,8 +70,8 @@ Item {
                     id: loginButton
                     text: "Connexion"
                     onClicked: {
-                        if (classA.connectEmp(userInput.text, passwordInput.text)) {
-                            classA.seeEmp();
+                        if (backend.connectEmp(userInput.text, passwordInput.text)) {
+                            backend.seeEmp();
                             pageLoader.source = "internalMenu.qml"
                         }
                     }

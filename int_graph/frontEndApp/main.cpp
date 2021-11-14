@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     engine.load(url);
 
     QQmlContext * rootContext = engine.rootContext();
-    rootContext->setContextProperty("classA", &requests);
+    rootContext->setContextProperty("backend", &requests);
 
     return app.exec();
 }

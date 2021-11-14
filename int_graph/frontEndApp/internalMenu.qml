@@ -17,7 +17,7 @@ Item {
         Rectangle {
             id: titleRect
             Text {
-                text: "Bienvenue " + classA.getUserFirstName() + " " + classA.getUserLastName()
+                text: "Bienvenue " + backend.getUserFirstName() + " " + backend.getUserLastName()
                 font.bold: true
                 font.pixelSize: 20
             }
