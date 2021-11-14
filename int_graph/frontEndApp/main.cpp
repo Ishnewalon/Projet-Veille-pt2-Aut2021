@@ -13,8 +13,6 @@ int main(int argc, char *argv[])
 
 
     QGuiApplication app(argc, argv);
-    qmlRegisterType<Login> ("Tester", 1, 0, "Login");
-//    qmlRegisterType<dbRequests> ("dbTester", 1, 0, "Requests");
     dbRequests requests;
 
     QQmlApplicationEngine engine;

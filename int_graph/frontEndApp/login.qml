@@ -3,21 +3,10 @@ import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
-import Tester 1.0
-//import dbTester 1.0
+
 Item {
     width: 650
     height: 400
-
-    Login {
-        id: myLogin
-        empId: userInput.text
-        mdp: passwordInput.text
-    }
-
-  //  Requests {
-    //    id: myRequests
-    //}
 
     ColumnLayout {
 
