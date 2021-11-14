@@ -23,6 +23,7 @@ public:
     Q_INVOKABLE QString getUserFirstName();
     Q_INVOKABLE QString getUserLastName();
     Q_INVOKABLE void updatePassword(QString empId, QString oldPassword, QString newPassword);
+    Q_INVOKABLE void updatePrice(QString tableName, QString menuItemName, QString newPrice);
 
 private:
     user employee;
