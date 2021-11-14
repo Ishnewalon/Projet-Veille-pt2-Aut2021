@@ -21,7 +21,6 @@ Item {
                 text: "Bienvenue " + classA.getUserFirstName() + " " + classA.getUserLastName()
                 font.bold: true
                 font.pixelSize: 20
-                //anchors.horizontalCenter: parent.horizontalCenter
             }
             Layout.fillWidth: true
         }
@@ -38,7 +37,7 @@ Item {
 
             Button {
                 id: createBillButton
-                text: "Clickme"
+                text: "Nouvelle Facture"
                 anchors.horizontalCenter: parent.horizontalCenter
             }
             Layout.fillWidth: true
@@ -56,7 +55,7 @@ Item {
 
             Button {
                 id: correctBillButton
-                text: "Clickme"
+                text: "Corriger Facture"
                 anchors.horizontalCenter: parent.horizontalCenter
 
             }
@@ -75,7 +74,7 @@ Item {
 
             Button {
                 id: changePassButton
-                text: "Clickme"
+                text: "Changer mot de passe"
                 anchors.horizontalCenter: parent.horizontalCenter
             }
             Layout.fillWidth: true
@@ -93,7 +92,7 @@ Item {
 
             Button {
                 id: changePriceButton
-                text: "Clickme"
+                text: "Changer prix"
                 anchors.horizontalCenter: parent.horizontalCenter
             }
             Layout.fillWidth: true
