@@ -75,6 +75,7 @@ Item {
                 id: changePassButton
                 text: "Changer mot de passe"
                 anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: pageLoader.source = "changePassword.qml"
             }
             Layout.fillWidth: true
         }
