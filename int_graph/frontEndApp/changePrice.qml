@@ -62,6 +62,24 @@ Item {
             Layout.fillWidth: true
         }
 
+        Rectangle {
+            id: newPriceRect
+            Label {
+                id: newPriceLabel
+                text: "Nouveau prix"
+                anchors.bottom: newPriceInput.top
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.margins: 10
+            }
+
+            TextField {
+                id: newPriceInput
+                placeholderText: qsTr("Entrez le prix")
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: 300
+            }
+            Layout.fillWidth: true
+        }
 
     }
 }
