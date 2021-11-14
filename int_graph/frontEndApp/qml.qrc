@@ -4,5 +4,6 @@
         <file>internalMenu.qml</file>
         <file>login.qml</file>
         <file>changePassword.qml</file>
+        <file>changePrice.qml</file>
     </qresource>
 </RCC>
