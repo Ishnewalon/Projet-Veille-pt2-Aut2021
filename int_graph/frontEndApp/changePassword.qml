@@ -45,6 +45,25 @@ Item {
             Layout.fillWidth: true
         }
 
+        Rectangle {
+            id: oldPassRect
+            Label {
+                id: oldPassLabel
+                text: "Ancien mot de passe"
+                anchors.bottom: oldPassInput.top
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.margins: 10
+            }
+
+            TextField {
+                id: oldPassInput
+                placeholderText: qsTr("Entrez votre ancien mot de passe")
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: 300
+            }
+            Layout.fillWidth: true
+        }
+
 
 
     }
