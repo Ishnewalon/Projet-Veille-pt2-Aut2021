@@ -58,6 +58,7 @@ Item {
             TextField {
                 id: oldPassInput
                 placeholderText: qsTr("Entrez votre ancien mot de passe")
+                echoMode: TextInput.Password
                 anchors.horizontalCenter: parent.horizontalCenter
                 width: 300
             }
@@ -77,6 +78,7 @@ Item {
             TextField {
                 id: newPassInput
                 placeholderText: qsTr("Entrez votre nouveau mot de passe")
+                echoMode: TextInput.Password
                 anchors.horizontalCenter: parent.horizontalCenter
                 width: 300
             }
