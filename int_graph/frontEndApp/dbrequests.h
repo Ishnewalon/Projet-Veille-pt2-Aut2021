@@ -6,6 +6,7 @@
 #include <string>
 #include <pqxx/pqxx>
 #include "user.h"
+#include "menulist.h"
 
 class dbRequests : public QObject
 {
@@ -27,6 +28,7 @@ public:
 
 private:
     user employee;
+    menuList menu;
     std::string dbName;
     std::string userName;
     std::string password;
