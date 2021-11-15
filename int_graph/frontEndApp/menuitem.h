@@ -12,7 +12,7 @@ public:
     explicit menuItem(QObject *parent = nullptr);
     std::string getNom();
     std::string getPrix();
-    std::string getMenuName();
+    std::string getNomMenu();
     void setNom(QString itemName);
     void setPrix(QString price);
     void setMenuName(QString menuName);
@@ -21,7 +21,7 @@ private:
     int id;
     std::string nom;
     std::string prix;
-    std::string menuName;
+    std::string nomMenu;
 
 signals:
 

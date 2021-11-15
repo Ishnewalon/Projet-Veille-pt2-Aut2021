@@ -13,9 +13,18 @@ std::string menuItem::getPrix() {
     return prix;
 }
 
-std::string menuItem::getMenuName() {
-    return menuName;
+std::string menuItem::getNomMenu() {
+    return nomMenu;
 }
-/*void setNom(QString itemName);
-void setPrix(QString price);
-void setMenuName(QString menuName);*/
+
+void menuItem::setNom(QString itemName) {
+    nom = itemName.toStdString();
+}
+
+void menuItem::setPrix(QString price) {
+    prix = price.toStdString();
+}
+
+void menuItem::setMenuName(QString menuName) {
+    nomMenu = menuName.toStdString();
+}
