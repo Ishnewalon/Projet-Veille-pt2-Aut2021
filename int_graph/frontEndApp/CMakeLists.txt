@@ -21,6 +21,7 @@ set(PROJECT_SOURCES
         app.h app.cpp
         sqlrequests.h sqlrequests.cpp
         user.h user.cpp
+        menulist.h menulist.cpp
         dbrequests.h dbrequests.cpp
         menuitem.h menuitem.cpp
         qml.qrc

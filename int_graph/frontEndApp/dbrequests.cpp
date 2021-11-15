@@ -53,8 +53,6 @@ QString dbRequests::getUserLastName() {
     return QString::fromStdString(employee.getNom());
 }
 
-
-
 void dbRequests::updatePassword(QString empID, QString oldPassword, QString newPassword) {
     pqxx::connection C(connectionString());
     if (C.is_open()){
