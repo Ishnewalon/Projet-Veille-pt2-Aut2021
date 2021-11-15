@@ -13,9 +13,9 @@ public:
     std::string getNom();
     std::string getPrix();
     std::string getNomMenu();
-    void setNom(QString itemName);
-    void setPrix(QString price);
-    void setMenuName(QString menuName);
+    void setNom(std::string itemName);
+    void setPrix(std::string price);
+    void setMenuName(std::string menuName);
 
 private:
     int id;

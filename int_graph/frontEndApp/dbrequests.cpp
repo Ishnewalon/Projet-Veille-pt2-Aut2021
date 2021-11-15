@@ -86,3 +86,24 @@ void dbRequests::updatePrice(QString tableName, QString menuItemName, QString ne
     }
     C.disconnect();
 }
+
+void dbRequests::fillMenuList(QString tableName) {
+    pqxx::connection C(connectionString());
+    if (C.is_open()){
+        std::cout << "La connexion a reussie" << std::endl;
+        std::string sqlStatement = "SELECT * FROM " + tableName.toStdString() + ";";
+        pqxx::nontransaction N(C);
+        pqxx::result R(N.exec(sqlStatement));
+
+        for (pqxx::result::const_iterator iterator = R.begin(); iterator != R.end(); ++iterator){
+            std::cout << "found you" << std::endl;
+            menuItem item;
+            item.setNom(iterator["nom"].as<std::string>());
+
+        }
+    }
+    else {
+         std::cout << "La connexion a echouee" << std::endl;
+    }
+    C.disconnect();
+}

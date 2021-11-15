@@ -17,14 +17,14 @@ std::string menuItem::getNomMenu() {
     return nomMenu;
 }
 
-void menuItem::setNom(QString itemName) {
-    nom = itemName.toStdString();
+void menuItem::setNom(std::string itemName) {
+    nom = itemName;
 }
 
-void menuItem::setPrix(QString price) {
-    prix = price.toStdString();
+void menuItem::setPrix(std::string price) {
+    prix = price;
 }
 
-void menuItem::setMenuName(QString menuName) {
-    nomMenu = menuName.toStdString();
+void menuItem::setMenuName(std::string menuName) {
+    nomMenu = menuName;
 }
