@@ -10,6 +10,9 @@ class menuItem : public QObject
     Q_OBJECT
 public:
     explicit menuItem(QObject *parent = nullptr);
+
+
+private:
     int id;
     std::string nom;
     double prix;
