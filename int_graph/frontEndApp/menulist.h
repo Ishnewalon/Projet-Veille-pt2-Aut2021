@@ -13,6 +13,8 @@ class menuList : public QObject
 public:
     explicit menuList(QObject *parent = nullptr);
     std::list<menuItem> menuItemList;
+    void addToList(menuItem &item);
+    void emptyList();
 
 private:
 

@@ -99,7 +99,9 @@ void dbRequests::fillMenuList(QString tableName) {
             std::cout << "found you" << std::endl;
             menuItem item;
             item.setNom(iterator["nom"].as<std::string>());
-
+            item.setPrix(iterator["prix"].as<std::string>());   //might have to be double
+            item.setMenuName(tableName.toStdString());
+            menu.menuItemList.push_back(item);
         }
     }
     else {
