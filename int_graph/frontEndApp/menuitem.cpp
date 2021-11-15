@@ -25,6 +25,6 @@ void menuItem::setPrix(std::string price) {
     prix = price;
 }
 
-void menuItem::setMenuName(std::string menuName) {
+void menuItem::setNomMenu(std::string menuName) {
     nomMenu = menuName;
 }
