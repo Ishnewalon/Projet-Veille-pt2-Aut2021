@@ -101,7 +101,6 @@ void dbRequests::fillMenuList(QString tableName) {
             item.setNom(iterator["nom"].as<std::string>());
             item.setPrix(iterator["prix"].as<std::string>());   //might have to be double
             item.setNomMenu(tableName.toStdString());
-            std::cout << item.getNom() << std::endl;
             menu.addToList(item);
         }
     }
@@ -112,7 +111,11 @@ void dbRequests::fillMenuList(QString tableName) {
 }
 
 void dbRequests::printMenuList() {
-    for (auto i = menu.menuItemList.begin(); i != menu.menuItemList.end(); i++) {
-        std::cout << i->getNom() << ' ' << i->getPrix();
+    for (auto &i : menu.menuItemList) {
+        std::cout << i.getNom() << i.getPrix() << std::endl;
     }
+
+    /* for (auto i = menu.menuItemList.begin(); i != menu.menuItemList.end(); i++) {
+        std::cout << i->getNom() << ' ' << i->getPrix();
+    }*/
 }
