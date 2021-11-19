@@ -38,7 +38,7 @@ Item {
                 id: createBillButton
                 text: "Nouvelle Facture"
                 anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: ;
+                onClicked: pageLoader.source("billingMenu.qml");
             }
             Layout.fillWidth: true
         }
