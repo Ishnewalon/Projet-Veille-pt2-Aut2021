@@ -24,5 +24,5 @@ Item {
             Layout.fillWidth: true
         }
 
-
+    }
 }
