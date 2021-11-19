@@ -12,3 +12,4 @@ void menuList::addToList(menuItem &item) {
 void menuList::emptyList() {
     menuItemList.clear();
 }
+

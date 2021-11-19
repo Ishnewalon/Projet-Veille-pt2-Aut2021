@@ -27,6 +27,7 @@ public:
     Q_INVOKABLE void updatePassword(QString empId, QString oldPassword, QString newPassword);
     Q_INVOKABLE void updatePrice(QString tableName, QString menuItemName, QString newPrice);
     Q_INVOKABLE void fillMenuList(QString tableName);
+    Q_INVOKABLE void printMenuList();
 
 private:
     user employee;

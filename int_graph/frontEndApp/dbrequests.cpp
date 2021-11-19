@@ -103,11 +103,16 @@ void dbRequests::fillMenuList(QString tableName) {
             item.setPrix(iterator["prix"].as<std::string>());   //might have to be double
             item.setNomMenu(tableName.toStdString());
             menu.addToList(item);
-           // menu.menuItemList.push_back(item);
         }
     }
     else {
          std::cout << "La connexion a echouee" << std::endl;
     }
     C.disconnect();
+}
+
+void dbRequests::printMenuList() {
+    for (auto i = menu.menuItemList.begin(); i != menu.menuItemList.end(); i++) {
+        std::cout << i->getNom() << ' ' << i->getPrix();
+    }
 }
