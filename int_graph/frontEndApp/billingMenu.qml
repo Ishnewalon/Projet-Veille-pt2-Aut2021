@@ -79,5 +79,19 @@ Item {
             }
             Layout.fillWidth: true
         }
+
+        Rectangle {
+            id: breuvageRect
+            Button {
+                id: breuvageButton
+                text: "Breuvage"
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    backend.fillMenuList("breuvage");
+                    pageLoader.source("aPage.qml");
+                }
+            }
+            Layout.fillWidth: true
+        }
     }
 }
