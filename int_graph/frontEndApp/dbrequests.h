@@ -28,6 +28,8 @@ public:
     Q_INVOKABLE void updatePrice(QString tableName, QString menuItemName, QString newPrice);
     Q_INVOKABLE void fillMenuList(QString tableName);
     Q_INVOKABLE void printMenuList();
+    Q_INVOKABLE void addToBill(QString name, QString price, QString menuName);
+    menuItem fillmenuItem(QString name, QString price, QString menuName);
 
 private:
     user employee;

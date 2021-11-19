@@ -119,3 +119,15 @@ void dbRequests::printMenuList() {
         std::cout << i->getNom() << ' ' << i->getPrix();
     }*/
 }
+
+void dbRequests::addToBill(QString name, QString price, QString menuName) {
+    facture.push_back(fillmenuItem(name, price, menuName));
+}
+
+menuItem dbRequests::fillmenuItem(QString name, QString price, QString menuName) {
+    menuItem item;
+    item.setNom(name.toStdString());
+    item.setPrix(price.toStdString());
+    item.setNomMenu(menuName.toStdString());
+    return item;
+}
