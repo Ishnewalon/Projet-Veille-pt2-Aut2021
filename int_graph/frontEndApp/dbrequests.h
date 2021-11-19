@@ -37,6 +37,7 @@ private:
     std::string password;
     std::string hostaddr;
     std::string port;
+    std::list<menuItem> facture;
 signals:
 
 };
