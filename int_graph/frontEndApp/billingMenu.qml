@@ -24,5 +24,20 @@ Item {
             Layout.fillWidth: true
         }
 
+
+        Rectangle {
+            id: dejeunerRect
+            Button {
+                id: dejeunerButton
+                text: "Dejeuner"
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    backend.fillMenuList("dejeuner");
+                    pageLoader.source("aPage.qml");
+                }
+            }
+            Layout.fillWidth: true
+        }
+
     }
 }
