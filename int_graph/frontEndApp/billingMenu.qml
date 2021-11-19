@@ -24,7 +24,6 @@ Item {
             Layout.fillWidth: true
         }
 
-
         Rectangle {
             id: dejeunerRect
             Button {
@@ -39,5 +38,18 @@ Item {
             Layout.fillWidth: true
         }
 
+        Rectangle {
+            id: dinerRect
+            Button {
+                id: dinerButton
+                text: "Diner"
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    backend.fillMenuList("diner");
+                    pageLoader.source("aPage.qml");
+                }
+            }
+            Layout.fillWidth: true
+        }
     }
 }
