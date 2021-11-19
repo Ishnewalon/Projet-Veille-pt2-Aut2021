@@ -107,5 +107,19 @@ Item {
             }
             Layout.fillWidth: true
         }
+
+        Rectangle {
+            id: dessertRect
+            Button {
+                id: dessertButton
+                text: "Dessert"
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    backend.fillMenuList("dessert");
+                    pageLoader.source("aPage.qml");
+                }
+            }
+            Layout.fillWidth: true
+        }
     }
 }
