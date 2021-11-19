@@ -65,5 +65,19 @@ Item {
             }
             Layout.fillWidth: true
         }
+
+        Rectangle {
+            id: comboRect
+            Button {
+                id: comboButton
+                text: "Combo"
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    backend.fillMenuList("combe");
+                    pageLoader.source("aPage.qml");
+                }
+            }
+            Layout.fillWidth: true
+        }
     }
 }
