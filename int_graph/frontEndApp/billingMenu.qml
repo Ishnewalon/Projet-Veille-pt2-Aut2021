@@ -51,5 +51,19 @@ Item {
             }
             Layout.fillWidth: true
         }
+
+        Rectangle {
+            id: souperRect
+            Button {
+                id: souperButton
+                text: "Souper"
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    backend.fillMenuList("souper");
+                    pageLoader.source("aPage.qml");
+                }
+            }
+            Layout.fillWidth: true
+        }
     }
 }
