@@ -97,11 +97,11 @@ void dbRequests::fillMenuList(QString tableName) {
         pqxx::result R(N.exec(sqlStatement));
 
         for (pqxx::result::const_iterator iterator = R.begin(); iterator != R.end(); ++iterator){
-            std::cout << "found you" << std::endl;
             menuItem item;
             item.setNom(iterator["nom"].as<std::string>());
             item.setPrix(iterator["prix"].as<std::string>());   //might have to be double
             item.setNomMenu(tableName.toStdString());
+            std::cout << item.getNom() << std::endl;
             menu.addToList(item);
         }
     }

@@ -38,6 +38,10 @@ Item {
                 id: createBillButton
                 text: "Nouvelle Facture"
                 anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    backend.fillMenuList("dejeuner");
+                    backend.printMenuList()
+                }
             }
             Layout.fillWidth: true
         }
