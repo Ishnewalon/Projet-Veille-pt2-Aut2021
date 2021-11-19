@@ -81,6 +81,20 @@ Item {
         }
 
         Rectangle {
+            id: enfantRect
+            Button {
+                id: enfantButton
+                text: "Enfant"
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    backend.fillMenuList("enfant");
+                    pageLoader.source("aPage.qml");
+                }
+            }
+            Layout.fillWidth: true
+        }
+
+        Rectangle {
             id: breuvageRect
             Button {
                 id: breuvageButton
