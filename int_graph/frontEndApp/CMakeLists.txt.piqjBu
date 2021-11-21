@@ -54,7 +54,7 @@ endif()
 target_compile_definitions(frontEndApp
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(frontEndApp
-  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::Widgets pq pqxx)
+  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::quickcontrols2 Qt${QT_VERSION_MAJOR}::Widgets pq pqxx)
 
 set_target_properties(frontEndApp PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

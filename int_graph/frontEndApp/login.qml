@@ -1,4 +1,3 @@
-import QtQuick 2.0
 import QtQuick 2.15
 import QtQuick.Window 2.15
 import QtQuick.Controls 2.12
@@ -71,8 +70,11 @@ Item {
                     text: "Connexion"
                     onClicked: {
                         if (backend.connectEmp(userInput.text, passwordInput.text)) {
-                            backend.seeEmp();
                             pageLoader.source = "internalMenu.qml"
+                        }
+                        else {
+                            errorText.text = "Le numero d'employe ou le mot de passe est invalide"
+                            errorMessage.open()
                         }
                     }
                     background: Rectangle {
@@ -98,3 +100,4 @@ Item {
         }
     }
 }
+

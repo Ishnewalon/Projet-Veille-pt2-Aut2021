@@ -95,6 +95,7 @@ Item {
                 id: changePriceButton
                 text: "Changer prix"
                 anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: pageLoader.source = "changePrice.qml"
             }
             Layout.fillWidth: true
         }

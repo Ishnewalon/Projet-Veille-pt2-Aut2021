@@ -15,20 +15,16 @@ Window {
         source: "login.qml"
     }
 
-    Popup {
+    MessageDialog {
         id: errorMessage
-        x: 150
-        y: 150
-        width: 400
-        height: 50
-        background: Rectangle {
-            id:errorMessageBackground
-            color: "red"
-        }
-        contentItem: Text {
-            id: errorText
+        title: "Error"
+        icon: StandardIcon.Critical
+        standardButtons: StandardButton.Ok
+        onAccepted: {
 
+            visible: false
         }
     }
+
 
 }

@@ -1,4 +1,5 @@
 #include "dbrequests.h"
+#include <QtWidgets/QMessageBox>
 
 dbRequests::dbRequests(QObject *parent, std::string dbName,
                        std::string userName,
@@ -21,15 +22,14 @@ std::string dbRequests::connectionString() {
 bool dbRequests::connectEmp(QString empId, QString mdp) {
     pqxx::connection C(connectionString());
     if (C.is_open()){
-        std::cout << "La connexion a reussie" << std::endl;
         std::string sqlStatement = "SELECT * FROM utilisateurs WHERE numemp = '" + empId.toStdString() + "' AND mdp = '" + mdp.toStdString() + "' ;";
         pqxx::nontransaction N(C);
         pqxx::result R(N.exec(sqlStatement));
 
         for (pqxx::result::const_iterator iterator = R.begin(); iterator != R.end(); ++iterator){
-            std::cout << "found you" << std::endl;
             employee.setNom(iterator["nom"].as<std::string>());
             employee.setPrenom(iterator["prenom"].as<std::string>());
+            C.disconnect();
             return true;
         }
         return false;
@@ -54,24 +54,22 @@ QString dbRequests::getUserLastName() {
     return QString::fromStdString(employee.getNom());
 }
 
-void dbRequests::updatePassword(QString empID, QString oldPassword, QString newPassword) {
+bool dbRequests::updatePassword(QString empID, QString oldPassword, QString newPassword) {
     pqxx::connection C(connectionString());
     if (C.is_open()){
-        std::cout << "La connexion a reussie" << std::endl;
         std::string sqlStatement = "UPDATE utilisateurs SET mdp = '" + newPassword.toStdString() + "'" \
                                      " WHERE mdp = '" + oldPassword.toStdString() + "' AND numemp = '" + empID.toStdString() + "';";
         pqxx::work W(C);
         W.exec(sqlStatement);
         W.commit();
-        std::cout << "Changement du mot de passe a ete un succes" << std::endl;
-    }
-    else {
-         std::cout << "La connexion a echouee" << std::endl;
+        C.disconnect();
+        return true;
     }
     C.disconnect();
+    return false;
 }
 
-void dbRequests::updatePrice(QString tableName, QString menuItemName, QString newPrice) {
+bool dbRequests::updatePrice(QString tableName, QString menuItemName, QString newPrice) {
     pqxx::connection C(connectionString());
     if (C.is_open()){
         std::cout << "La connexion a reussie" << std::endl;
@@ -80,12 +78,11 @@ void dbRequests::updatePrice(QString tableName, QString menuItemName, QString ne
         pqxx::work W(C);
         W.exec(sqlStatement);
         W.commit();
-        std::cout << "Changement du prix effectue" << std::endl;
-    }
-    else {
-         std::cout << "La connexion a echouee" << std::endl;
+        C.disconnect();
+        return true;
     }
     C.disconnect();
+    return false;
 }
 
 void dbRequests::fillMenuList(QString tableName) {

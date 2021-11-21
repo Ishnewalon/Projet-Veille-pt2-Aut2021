@@ -24,8 +24,8 @@ public:
     Q_INVOKABLE void seeEmp();
     Q_INVOKABLE QString getUserFirstName();
     Q_INVOKABLE QString getUserLastName();
-    Q_INVOKABLE void updatePassword(QString empId, QString oldPassword, QString newPassword);
-    Q_INVOKABLE void updatePrice(QString tableName, QString menuItemName, QString newPrice);
+    Q_INVOKABLE bool updatePassword(QString empId, QString oldPassword, QString newPassword);
+    Q_INVOKABLE bool updatePrice(QString tableName, QString menuItemName, QString newPrice);
     Q_INVOKABLE void fillMenuList(QString tableName);
     Q_INVOKABLE void printMenuList();
     Q_INVOKABLE void addToBill(QString name, QString price, QString menuName);

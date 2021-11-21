@@ -87,8 +87,17 @@ Item {
                     id: confirmButton
                     text: "Confirmer"
                     onClicked: {
-                        backend.updatePrice(tableNameInput.text, menuItemNameInput.text, newPriceInput.text)
-                        pageLoader.source = "internalMenu.qml"
+                        if (backend.updatePrice(tableNameInput.text, menuItemNameInput.text, newPriceInput.text)) {
+                            errorText.text = "Changement de prix fait avec succes"
+                            errorMessageBackground.color = "green"
+                            errorMessage.open()
+                            pageLoader.source = "internalMenu.qml"
+                        }
+                        else {
+                            errorText.text = "Changement de prix incomplet"
+                            errorMessageBackground.color = "red"
+                            errorMessage.open()
+                        }
                     }
                     background: Rectangle {
                         color: "green"

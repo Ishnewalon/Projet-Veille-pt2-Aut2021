@@ -91,8 +91,17 @@ Item {
                     id: confirmButton
                     text: "Confirmer"
                     onClicked: {
-                        backend.updatePassword(empIdInput.text, oldPassInput.text, newPassInput.text)
-                        pageLoader.source = "internalMenu.qml"
+                        if (backend.updatePassword(empIdInput.text, oldPassInput.text, newPassInput.text)) {
+                            errorText.text = "Changement de mot de passe fait avec succes"
+                            errorMessageBackground.color = "green"
+                            errorMessage.open()
+                            pageLoader.source = "internalMenu.qml"
+                        }
+                        else {
+                            errorText.text = "Changement de mot de passe incomplet"
+                            errorMessageBackground.color = "red"
+                            errorMessage.open()
+                        }
                     }
                     background: Rectangle {
                         color: "green"
