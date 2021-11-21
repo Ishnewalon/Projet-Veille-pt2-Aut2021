@@ -24,7 +24,7 @@ set(PROJECT_SOURCES
         menuitem.h menuitem.cpp
         menulist.h menulist.cpp
         dbrequests.h dbrequests.cpp
-
+        datamodel.h datamodel.cpp
         qml.qrc
 )
 

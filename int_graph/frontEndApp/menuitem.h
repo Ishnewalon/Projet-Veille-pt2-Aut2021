@@ -8,6 +8,8 @@ class menuItem
 {
 public:
     menuItem();
+    menuItem(std::string &name, std::string &price, std::string &menuName) :
+        nom {name}, prix {price}, nomMenu {menuName} {}
     std::string getNom();
     std::string getPrix();
     std::string getNomMenu();
