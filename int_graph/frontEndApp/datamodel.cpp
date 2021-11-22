@@ -13,6 +13,10 @@ void DataModel::setDataVector(std::list<menuItem> &dataList) {
     }
 }
 
+void DataModel::emptyDataVector() {
+    dataVector.clear();
+}
+
 int DataModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {

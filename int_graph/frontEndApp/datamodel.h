@@ -21,6 +21,7 @@ public:
     explicit DataModel(std::list<menuItem> &dataList, QObject *parent = 0);
 
     Q_INVOKABLE void setDataVector(std::list<menuItem> &dataList);
+    Q_INVOKABLE void emptyDataVector();
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;

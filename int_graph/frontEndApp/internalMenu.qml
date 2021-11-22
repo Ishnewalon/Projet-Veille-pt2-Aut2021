@@ -38,12 +38,15 @@ Item {
                 id: createBillButton
                 text: "Nouvelle Facture"
                 anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: pageLoader.source = "billingMenu.qml";
+                onClicked:{
+                    backend.emptyFacture();
+                    pageLoader.source = "billingMenu.qml";
+                }
             }
             Layout.fillWidth: true
         }
 
-        Rectangle {
+       /* Rectangle {
             id: correctBillRect
             Label {
                 id: correctBillLabel
@@ -60,7 +63,7 @@ Item {
 
             }
             Layout.fillWidth: true
-        }
+        }*/
 
         Rectangle {
             id: changePassRect

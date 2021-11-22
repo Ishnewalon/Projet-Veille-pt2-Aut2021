@@ -13,11 +13,21 @@ Item {
         model: _myModel
         delegate: Rectangle {
             height: childrenRect.height
-            width: parent.width
+            width: 500
             Text {
                 id: itemDesc
                 text: {
-                    if (model.name === "Crepe choco-fruits") {
+                    if (model.name === "Crepe choco-fruits" ||
+                        model.name === "Macaroni au fromage" ||
+                        model.name === "Wrap au poulet" ||
+                        model.name === "Saumon fume" ||
+                        model.name === "Hot dog Combo" ||
+                        model.name === "Saumon fume Combo" ||
+                        model.name === "Croquette de poulet" ||
+                        model.name === "Spaghetti Bolognaise" ||
+                        model.name === "Grilled cheese" ||
+                        model.name === "Gateau au chocolat" ||
+                        model.name === "Creme glacee") {
                         model.name + "\t" + model.price
                     }
                     else {
@@ -28,7 +38,7 @@ Item {
             Button {
                 id: addToBill
                 anchors {
-                    left: itemDesc.right;
+                    right: parent.right
                     margins: 30
                 }
                 text: "Ajouter a la facture"

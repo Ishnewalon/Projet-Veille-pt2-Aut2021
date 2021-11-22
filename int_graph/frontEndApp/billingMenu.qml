@@ -31,6 +31,7 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     backend.fillMenuList("dejeuner");
+                    _myModel.emptyDataVector();
                     _myModel.setDataVector(backend.getMenuList());
                     pageLoader.source = "menuItemList.qml";
                 }
@@ -46,6 +47,7 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     backend.fillMenuList("diner");
+                    _myModel.emptyDataVector();
                     _myModel.setDataVector(backend.getMenuList());
                     pageLoader.source = "menuItemList.qml";
                 }
@@ -61,6 +63,7 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     backend.fillMenuList("souper");
+                    _myModel.emptyDataVector();
                     _myModel.setDataVector(backend.getMenuList());
                     pageLoader.source = "menuItemList.qml";
                 }
@@ -76,6 +79,7 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     backend.fillMenuList("combo");
+                    _myModel.emptyDataVector();
                     _myModel.setDataVector(backend.getMenuList());
                     pageLoader.source = "menuItemList.qml";
                 }
@@ -91,6 +95,7 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     backend.fillMenuList("enfant");
+                    _myModel.emptyDataVector();
                     _myModel.setDataVector(backend.getMenuList());
                     pageLoader.source = "menuItemList.qml";
                 }
@@ -106,6 +111,7 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     backend.fillMenuList("breuvage");
+                    _myModel.emptyDataVector();
                     _myModel.setDataVector(backend.getMenuList());
                     pageLoader.source = "menuItemList.qml";
                 }
@@ -121,6 +127,7 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     backend.fillMenuList("dessert");
+                    _myModel.emptyDataVector();
                     _myModel.setDataVector(backend.getMenuList());
                     pageLoader.source = "menuItemList.qml";
                 }
@@ -134,7 +141,6 @@ Item {
                     id: backButton
                     text: "Retour"
                     onClicked: pageLoader.source = "internalMenu.qml"
-                    //anchors.right: confirmButton.left
                     anchors.margins: 15
                     background: Rectangle {
                         color: "red"

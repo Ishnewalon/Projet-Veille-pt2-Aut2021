@@ -86,6 +86,7 @@ bool dbRequests::updatePrice(QString tableName, QString menuItemName, QString ne
 }
 
 void dbRequests::fillMenuList(QString tableName) {
+    menu.emptyList();
     pqxx::connection C(connectionString());
     if (C.is_open()){
         std::cout << "La connexion a reussie" << std::endl;
@@ -131,4 +132,8 @@ menuItem dbRequests::fillmenuItem(QString name, QString price, QString menuName)
 
 std::list<menuItem> dbRequests::getMenuList() {
     return menu.menuItemList;
+}
+
+void dbRequests::emptyFacture() {
+    facture.clear();
 }
