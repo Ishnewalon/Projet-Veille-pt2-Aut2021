@@ -23,17 +23,28 @@ int DataModel::rowCount(const QModelIndex &parent) const
 
 QVariant DataModel::data(const QModelIndex &index, int role) const
 {
-    (void) role;
-
     if (!index.isValid()) {
         return QVariant();
     }
 
-    if (index.row() >= rowCount(index)) {
-        return QVariant();
-    }
-
     menuItem d = dataVector.at(index.row());
-
+    if (role == NameRole) {
+        return QString::fromStdString(d.getNom());
+    }
+    else if (role == PriceRole) {
+        return QString::fromStdString(d.getPrix());
+    }
+    else if (role == MenuNameRole) {
+        return QString::fromStdString(d.getNomMenu());
+    }
     return QVariant();
+}
+
+QHash<int, QByteArray> DataModel::roleNames() const {
+    static QHash<int, QByteArray> mapping {
+        {NameRole, "name"},
+        {PriceRole, "price"},
+        {MenuNameRole, "menuName"}
+    };
+    return mapping;
 }
