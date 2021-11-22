@@ -4,6 +4,7 @@
 
 #include "login.h"
 #include "dbrequests.h"
+#include "datamodel.h"
 
 int main(int argc, char *argv[])
 {

@@ -6,5 +6,6 @@
         <file>changePassword.qml</file>
         <file>changePrice.qml</file>
         <file>billingMenu.qml</file>
+        <file>menuItemList.qml</file>
     </qresource>
 </RCC>
