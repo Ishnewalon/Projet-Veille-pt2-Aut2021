@@ -32,6 +32,7 @@ public:
     menuItem fillmenuItem(QString name, QString price, QString menuName);
     Q_INVOKABLE std::list<menuItem> getMenuList();
     Q_INVOKABLE void emptyFacture();
+    Q_INVOKABLE std::list<menuItem> getBill();
 
 private:
     user employee;

@@ -137,3 +137,7 @@ std::list<menuItem> dbRequests::getMenuList() {
 void dbRequests::emptyFacture() {
     facture.clear();
 }
+
+std::list<menuItem> dbRequests::getBill() {
+    return facture;
+}

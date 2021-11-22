@@ -8,6 +8,7 @@ Item {
 
     ListView {
         id: listView
+   //     anchors.top: titleLayout.bottom
         Layout.alignment: Qt.AlignCenter
         height: 200
         model: _myModel
@@ -38,6 +39,29 @@ Item {
         }
     }
 
+   /* ColumnLayout {
+        id: titleLayout
+        anchors.fill: parent
+
+        Rectangle {
+            id: titleRect
+            Text {
+                text: "Facture finale"
+                font.bold: true
+                font.pixelSize: 20
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+            Layout.fillWidth: true
+        }
+    }*/
+
+    ColumnLayout {
+        id: buttonLayout
+        anchors.fill: parent
+        anchors.margins: 10
+        anchors.top:listView.bottom
+        spacing: 10
+
     Rectangle {
         Rectangle {
             /*Button {
@@ -67,7 +91,7 @@ Item {
                 text: "Retour"
                 onClicked: pageLoader.source = "billingMenu.qml"
                // anchors.right: confirmButton.left
-                anchors.margins: 15
+               // anchors.margins: 15
                 background: Rectangle {
                     color: "red"
                     radius: 20
@@ -75,6 +99,7 @@ Item {
             }
             anchors.horizontalCenter: parent.horizontalCenter
         }
-        anchors.top:listView.bottom
+        Layout.fillWidth: true
+    }
     }
 }

@@ -46,36 +46,33 @@ Item {
             }
         }
     }
-
+    ColumnLayout {
+        anchors.fill: parent
+        anchors.margins: 10
+        anchors.top: listView.bottom
+        spacing: 10
     Rectangle {
         Rectangle {
-            /*Button {
+            Button {
                 id: confirmButton
-                text: "Confirmer"
+                text: "Terminer facture"
+                anchors.left: backButton.right
+               // anchors.left: parent.left
                 onClicked: {
-                    if (backend.updatePassword(empIdInput.text, oldPassInput.text, newPassInput.text)) {
-                        errorText.text = "Changement de mot de passe fait avec succes"
-                        errorMessageBackground.color = "green"
-                        errorMessage.open()
-                        pageLoader.source = "internalMenu.qml"
-                    }
-                    else {
-                        errorText.text = "Changement de mot de passe incomplet"
-                        errorMessageBackground.color = "red"
-                        errorMessage.open()
-                    }
+                    _myModel.emptyDataVector();
+                    _myModel.setDataVector(backend.getBill());
+                    pageLoader.source = "finalBillView.qml"
                 }
                 background: Rectangle {
                     color: "green"
                     radius: 20
                 }
             }
-*/
             Button {
                 id: backButton
                 text: "Retour"
                 onClicked: pageLoader.source = "billingMenu.qml"
-               // anchors.right: confirmButton.left
+              //  anchors.right: confirmButton.left
                 anchors.margins: 15
                 background: Rectangle {
                     color: "red"
@@ -84,6 +81,7 @@ Item {
             }
             anchors.horizontalCenter: parent.horizontalCenter
         }
-        anchors.top:listView.bottom
+        Layout.fillWidth: true
+    }
     }
 }
