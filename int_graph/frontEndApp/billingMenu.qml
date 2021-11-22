@@ -46,7 +46,8 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     backend.fillMenuList("diner");
-                    pageLoader.source("menuItemList.qml");
+                    _myModel.setDataVector(backend.getMenuList());
+                    pageLoader.source = "menuItemList.qml";
                 }
             }
             Layout.fillWidth: true
@@ -60,7 +61,8 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     backend.fillMenuList("souper");
-                    pageLoader.source("menuItemList.qml");
+                    _myModel.setDataVector(backend.getMenuList());
+                    pageLoader.source = "menuItemList.qml";
                 }
             }
             Layout.fillWidth: true
@@ -73,8 +75,9 @@ Item {
                 text: "Combo"
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
-                    backend.fillMenuList("combe");
-                    pageLoader.source("menuItemList.qml");
+                    backend.fillMenuList("combo");
+                    _myModel.setDataVector(backend.getMenuList());
+                    pageLoader.source = "menuItemList.qml";
                 }
             }
             Layout.fillWidth: true
@@ -88,7 +91,8 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     backend.fillMenuList("enfant");
-                    pageLoader.source("menuItemList.qml");
+                    _myModel.setDataVector(backend.getMenuList());
+                    pageLoader.source = "menuItemList.qml";
                 }
             }
             Layout.fillWidth: true
@@ -102,7 +106,8 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     backend.fillMenuList("breuvage");
-                    pageLoader.source("menuItemList.qml");
+                    _myModel.setDataVector(backend.getMenuList());
+                    pageLoader.source = "menuItemList.qml";
                 }
             }
             Layout.fillWidth: true
@@ -116,7 +121,8 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     backend.fillMenuList("dessert");
-                    pageLoader.source("menuItemList.qml");
+                    _myModel.setDataVector(backend.getMenuList());
+                    pageLoader.source = "menuItemList.qml";
                 }
             }
             Layout.fillWidth: true
