@@ -16,10 +16,6 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Widgets Quick REQUIRED)
 
 set(PROJECT_SOURCES
         main.cpp
-        login.h
-        login.cpp
-        app.h app.cpp
-        sqlrequests.h sqlrequests.cpp
         user.h user.cpp
         menuitem.h menuitem.cpp
         menulist.h menulist.cpp

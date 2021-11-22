@@ -2,9 +2,10 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
-#include "login.h"
 #include "dbrequests.h"
 #include "datamodel.h"
+#include <list>
+#include "menuitem.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,6 +16,7 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     dbRequests requests;
+    DataModel myModel;
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -27,6 +29,7 @@ int main(int argc, char *argv[])
 
     QQmlContext * rootContext = engine.rootContext();
     rootContext->setContextProperty("backend", &requests);
+    rootContext->setContextProperty("_myModel", &myModel);
 
     return app.exec();
 }

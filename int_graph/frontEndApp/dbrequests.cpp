@@ -128,3 +128,7 @@ menuItem dbRequests::fillmenuItem(QString name, QString price, QString menuName)
     item.setNomMenu(menuName.toStdString());
     return item;
 }
+
+std::list<menuItem> dbRequests::getMenuList() {
+    return menu.menuItemList;
+}

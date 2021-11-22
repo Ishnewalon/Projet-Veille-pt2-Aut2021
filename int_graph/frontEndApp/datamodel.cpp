@@ -1,8 +1,16 @@
 #include "datamodel.h"
 
+DataModel::DataModel() : QAbstractListModel(nullptr){}
+
 DataModel::DataModel(std::list<menuItem> &dataList, QObject *parent)
     : QAbstractListModel(parent), dataVector {dataList.begin(), dataList.end()}
 {
+}
+
+void DataModel::setDataVector(std::list<menuItem> &dataList) {
+    for (menuItem &item : dataList) {
+        dataVector.push_back(item);
+    }
 }
 
 int DataModel::rowCount(const QModelIndex &parent) const
