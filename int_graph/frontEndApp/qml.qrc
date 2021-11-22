@@ -7,5 +7,6 @@
         <file>changePrice.qml</file>
         <file>billingMenu.qml</file>
         <file>menuItemList.qml</file>
+        <file>finalBillView.qml</file>
     </qresource>
 </RCC>
